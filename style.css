@@ -1,0 +1,28 @@
+body{
+   color:white;
+  background-color:#6441A5;
+  font-family: 'Roboto', sans-serif;
+  font-size:20px;
+  vertical-align:middle;
+}
+.box{
+  background-color:white;
+  color:#6441A5;
+  border-style:solid;
+  border-color:#6441A5;
+  border-width:1px;
+  border-radius:10px;
+}
+a{
+  color:#6441A5;
+}
+p{
+  margin:10px;
+  vertical-align:middle;
+}
+.logo{
+  border-radius:100%;
+  height:50px;
+  width:auto;
+  margin:10px
+}
