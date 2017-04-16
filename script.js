@@ -12,7 +12,7 @@ $(document).ready(function() {
   var j = 0;
   var k = 0;
   //define status function to get the status and data of the channels from the streams var
- 
+
 
   function status(a) {
     $.ajax({
@@ -27,7 +27,10 @@ $(document).ready(function() {
         if (sData.stream === null) {
           offline.push(streams[a]);
           for (k; k < offline.length; k++) {
-            $(".offline").append('<div class="box channel container"><img src="https://tse2.mm.bing.net/th?id=OIP.Mdbb611ce91c9a2863503ba210a7a1693o0&pid=15.1" class="logo img-responsive col-xs-1"><p class="col-xs-3 text-center">' + offline[k] + '</p><pclass="col-xs-3 text-center">Offline</p><p class="col-xs-3 text-center"></p></a></div>');
+            $(".offline").append('<div class="box col-xs-4 col-xs-offset-4">' +
+            '<img src="https://cdn.auth0.com/blog/offline-first/offline-first-logo.png" ' +
+            'class="logo img-responsive col-xs-4"><h3 class="col-xs-8 text-center">' + offline[k] +
+            '</h3><p class="text-center">Offline</p><p class="text-center"></p></a></div>');
             //if stream data is available the channel is live. get the logo, channel name, game being played, and channel description, and record the link
           }
         } else {
@@ -37,7 +40,10 @@ $(document).ready(function() {
           games.push(sData.stream.channel.game);
           links.push("https://www.twitch.tv/" + streams[a]);
           for (j; j < online.length; j++) {
-            $(".online").append('<div class="box channel container"><a href="' + links[j] + '" target="_tab"><img src=' + pics[j] + ' class="logo img-responsive col-xs-1"><p class="col-xs-3 text-center">' + online[j] + '</p><p class="col-xs-3 text-center">Playing: ' + games[j] + '</p><p class="col-xs-4 text-center">' + statuses[j] + '</p></a></div>');
+            $(".online").append('<div class="box col-xs-4 col-xs-offset-4"><a href="' + links[j] + '" target="_tab"><img src=' + pics[j] +
+            ' class="logo img-responsive col-xs-4"><h3 class="col-xs-8 text-center">' + online[j] +
+            '</h3><p class="text-center">Playing: ' + games[j] + '</p><p class="text-center">' + statuses[j] +
+            '</p></a></div>');
           }
         }
       }
